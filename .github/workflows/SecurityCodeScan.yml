@@ -27,14 +27,16 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
+      - name: Set up projects
+        uses: security-code-scan/security-code-scan-add-action@v1.1
 
-      - name: SecurityCodeScan
-        # You may pin to the exact commit or the version.
-        # uses: security-code-scan/security-code-scan-results-action@cdb3d5e639054395e45bf401cba8688fcaf7a687
+      - name: Build
+        run: |
+          dotnet restore
+          dotnet build
+        
+      - name: Convert sarif for uploading to GitHub
         uses: security-code-scan/security-code-scan-results-action@v1.3
-        with:
-          # The output directory where SARIF files should be collected.
-          sarif_directory: ../res
+        
+      - name: Upload sarif	
+        uses: github/codeql-action/upload-sarif@v1
