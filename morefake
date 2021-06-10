@@ -1,0 +1,9 @@
+env:
+  PASSWORD: dY^5Ke76gdSiF
+  OPSGENIE_API_KEY: oov9e5e9-3ccb-20c3-1097-74gyye7tx42q
+  OPSGENIE_API_KEY_URL: https://api.opsgenie.com/v1/json/cloudwatch?apiKey=182663ax-3ccb-20c3-1097-3ol15d0wfu45
+  SLACK_WEBHOOK: https://hooks.slack.com/services/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
+  SLACK_API_KEY: xoxb-8825133122-0721161319009-2cmV8RhmMaFzb7NyFjXZNfgO
+  OKTA_CLIENT_ID: cjjg9h0C61FPeOmmmAmz
+  ANODOT_TOKEN: uvqcblfxi1d3ohvwjftgb59e3mba1x98
+  GITHUB_TOKEN: 1mlcyz92suir2qzfimaeekzb1goo5lveam15hebm
