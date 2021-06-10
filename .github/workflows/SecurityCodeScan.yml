@@ -37,4 +37,4 @@ jobs:
         uses: security-code-scan/security-code-scan-results-action@v1.3
         with:
           # The output directory where SARIF files should be collected.
-          sarif_directory: # optional, default is ../results
+          sarif_directory: ../res
