@@ -108,3 +108,9 @@ Application Options:
 Help Options:
   -h, --help                Show this help message
 ```
+
+### Custom rules
+
+The rules are written in [TOML](https://github.com/toml-lang/toml) as defined in [TomlLoader struct](https://github.com/zricethezav/gitleaks/blob/master/config/config.go#L57-L87). They Give us the freedom too enrich the rules for Gitleaks while scanning. You're able to whitelist certain folder (they aren't scanned) and certain strings in your git. You can adapt easly this tool to any project.
+
+We recommend reading the [official wiki](https://github.com/zricethezav/gitleaks)
