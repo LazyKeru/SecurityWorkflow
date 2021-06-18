@@ -13,7 +13,7 @@
 ### AWS Secret Key
 ```
 [[rules]]
-	description = "AWS Secret Key" 
+	description = "AWS Secret Key"
 	regex = '''(?i)aws(.{0,20})?(?-i)['\"][0-9a-zA-Z\/+]{40}['\"]'''
 	tags = ["key", "AWS"]
 ```
@@ -137,6 +137,9 @@
 	regex = '''xox[baprs]-([0-9a-zA-Z]{10,48})?'''
 	tags = ["key", "Slack"]
 ```
+
+detected:
+`SLACK_API_KEY: xoxb-8825133122-0721161319009-2cmV8RhmMaFzb7NyFjXZNfgO`
 
 ### Slack Webhook
 ```
@@ -286,6 +289,8 @@
   description = "Env Var"
   regex = '''(?i)(apikey|secret|key|api|password|pass|pw|host)=[0-9a-zA-Z-_.{}]{4,120}'''
 ```
+detected:
+`OPSGENIE_API_KEY_URL: https://api.opsgenie.com/v1/json/cloudwatch?apiKey=182663ax-3ccb-20c3-1097-3ol15d0wfu45`
 
 ### Potential bash var
 ```
