@@ -248,6 +248,7 @@ title = "gitleaks config"
 	description = "Whitelisted files"
 	files = [
 	    '''^\.?gitleaks.toml$''',
+			'''(.*?).toml$''',
 	    '''(.*?)(jpg|gif|doc|pdf|bin)$''',
 	    '''^package-lock\.json$''',
 	    '''yarn\.lock''',

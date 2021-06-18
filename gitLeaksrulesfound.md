@@ -13,7 +13,7 @@
 ### AWS Secret Key
 ```
 [[rules]]
-	description = "AWS Secret Key"
+	description = "AWS Secret Key" 
 	regex = '''(?i)aws(.{0,20})?(?-i)['\"][0-9a-zA-Z\/+]{40}['\"]'''
 	tags = ["key", "AWS"]
 ```
@@ -368,7 +368,7 @@
     paths = ['''(.*)?ssh''']
 ```
 
-## High Entropy
+## WP-Config
 ```
 [[rules]]
   description = "WP-Config"
@@ -376,7 +376,7 @@
   tags = ["key", "API", "generic"]
 ```
 
-## High Entropy
+## Files with keys and credentials
 ```
 [[rules]]
 	description = "Files with keys and credentials"
