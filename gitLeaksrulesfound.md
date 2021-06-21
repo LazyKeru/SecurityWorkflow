@@ -95,6 +95,38 @@
 	tags = ["key", "Github Token"]
 ```
 
+### Github Personal Access Token
+```
+[[rules]]
+    description = "Github Personal Access Token"
+    regex = '''ghp_[0-9a-zA-Z]{36}'''
+    tags = ["key", "Github"]
+```
+
+### Github OAuth Access Token
+```
+[[rules]]
+    description = "Github OAuth Access Token"
+    regex = '''gho_[0-9a-zA-Z]{36}'''
+    tags = ["key", "Github"]
+```
+
+### Github App Token
+```
+[[rules]]
+    description = "Github App Token"
+    regex = '''(ghu|ghs)_[0-9a-zA-Z]{36}'''
+    tags = ["key", "Github"]
+```
+
+### Github Refresh Token
+```
+[[rules]]
+    description = "Github Refresh Token"
+    regex = '''ghr_[0-9a-zA-Z]{76}'''
+    tags = ["key", "Github"]
+```
+
 ## Alibaba
 ```
 [[rules]]
@@ -189,12 +221,22 @@ detected:
 	tags = ["key", "API", "generic"]
 ```
 
-## Google API key
+## Google
+
+### Google API key
 ```
 [[rules]]
 	description = "Google API key"
 	regex = '''AIza[0-9A-Za-z\\-_]{35}'''
 	tags = ["key", "Google"]
+```
+
+### Google (GCP) Service Account
+```
+[[rules]]
+    description = "Google (GCP) Service Account"
+    regex = '''"type": "service_account"'''
+    tags = ["key", "Google"]
 ```
 
 ## Heroku API key
@@ -341,6 +383,14 @@ detected:
     ]
 ```
 
+## Dynatrace ttoken
+```
+[[rules]]
+    description = "Dynatrace ttoken"
+    regex = '''dt0[a-zA-Z]{1}[0-9]{2}\.[A-Z0-9]{24}\.[A-Z0-9]{64}'''
+    tags = ["key", "Dynatrace"]
+```
+
 ## Entropy and regex exemples
 
 ### entropy and regex
@@ -386,4 +436,46 @@ detected:
 [[rules]]
 	description = "Files with keys and credentials"
     fileNameRegex = '''(?i)(id_rsa|passwd|id_rsa.pub|pgpass|pem|key|shadow)'''
+```
+
+## Shopify
+
+### Shopify shared secret
+```
+[[rules]]
+    description = "Shopify shared secret"
+    regex = '''shpss_[a-fA-F0-9]{32}'''
+    tags = ["key", "Shopify"]
+```
+
+### Shopify access token
+```
+[[rules]]
+    description = "Shopify access token"
+    regex = '''shpat_[a-fA-F0-9]{32}'''
+    tags = ["key", "Shopify"]
+```
+
+### Shopify custom app access token
+```
+[[rules]]
+    description = "Shopify custom app access token"
+    regex = '''shpca_[a-fA-F0-9]{32}'''
+    tags = ["key", "Shopify"]
+```
+
+### Shopify private app access token
+```
+[[rules]]
+    description = "Shopify private app access token"
+    regex = '''shppa_[a-fA-F0-9]{32}'''
+    tags = ["key", "Shopify"]
+```
+
+## PyPI upload token
+```
+[[rules]]
+    description = "PyPI upload token"
+    regex = '''pypi-AgEIcHlwaS5vcmc[A-Za-z0-9-_]{50,1000}'''
+    tags = ["key", "pypi"]
 ```
