@@ -258,7 +258,7 @@ title = "gitleaks config"
 	regex = '''(?i)(?:AccessToken|pat|token).*?[':="][a-z0-9]{52}(?:'|"|\s|[\r?\n]+)'''
 
 [[rules]]
-	description = "CSCAN0240: VstsPersonalAccessToken 1"
+	description = "CSCAN0240: VstsPersonalAccessToken 2"
 	file = '''\.(?:cs|ps1|bat|config|xml|json)$'''
 	regex = '''(?i)(?:AccessToken|pat|token).*?[':="][a-z0-9/+]{70}==(?:'|"|\s|[\r?\n]+)'''
 
