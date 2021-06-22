@@ -108,7 +108,6 @@ title = "gitleaks config"
 [[rules]]
   description = "High Entropy"
   regex = '''[0-9a-zA-Z-_!{}/=]{4,120}'''
-    file = '''(?i)(dump.sql|high-entropy-misc.txt)$'''
   tags = ["entropy"]
   [[rules.Entropies]]
     Min = "4.3"
