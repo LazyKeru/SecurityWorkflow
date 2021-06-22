@@ -133,6 +133,14 @@
 
 ## Facebook
 
+### Facebook access token
+```
+[[rules]]
+description = "Facebook access token"
+regex = '''EAACEdEose0cBA[0-9A-Za-z]+'''
+tags = ["key", "Facebook"]
+```
+
 ### Facebook Secret Key
 ```
 [[rules]]
@@ -224,6 +232,30 @@
 	tags = ["key", "Google"]
 ```
 
+### Google Cloud Platform API key
+```
+[[rules]]
+description = "Google Cloud Platform API key"
+regex = '''(?i)(google|gcp|youtube|drive|yt)(.{0,20})?['\"][AIza[0-9a-z\\-_]{35}]['\"]'''
+tags = ["key", "Google", "GCP"]
+```
+
+### Google OAuth
+```
+[[rules]]
+description = "Google OAuth"
+regex = '''(?i)(google|gcp|auth)(.{0,20})?['"][0-9]+-[0-9a-z_]{32}\.apps\.googleusercontent\.com['"]'''
+tags = ["key", "Google", "OAuth"]
+```
+
+### Google OAuth access token
+```
+[[rules]]
+description = "Google OAuth access token"
+regex = '''ya29\.[0-9A-Za-z\-_]+'''
+tags = ["key", "Google", "OAuth"]
+```
+
 ### Google (GCP) Service Account
 ```
 [[rules]]
@@ -276,12 +308,35 @@
 	tags = ["key", "Mailchimp"]
 ```
 
+### Mailgun API key
+```
+[[rules]]
+description = "Mailgun API key"
+regex = '''(?i)(mailgun|mg)(.{0,20})?['"][0-9a-z]{32}['"]'''
+tags = ["key", "Mailgun"]
+```
+
+## Password in URL
+```
+[[rules]]
+description = "Password in URL"
+regex = '''[a-zA-Z]{3,10}:\/\/[^\/\s:@]{3,20}:[^\/\s:@]{3,20}@.{1,100}\/?.?'''
+tags = ["key", "URL", "generic"]
+```
+
 ## PayPal Braintree access token
 ```
 [[rules]]
 	description = "PayPal Braintree access token"
 	regex = '''access_token\$production\$[0-9a-z]{16}\$[0-9a-f]{32}'''
 	tags = ["key", "Paypal"]
+```
+## PGB
+```
+[[rules]]
+description = "PGP"
+regex = '''-----BEGIN PGP PRIVATE KEY BLOCK-----'''
+tags = ["key", "PGP"]
 ```
 
 ## Picatic API key
@@ -290,6 +345,14 @@
 	description = "Picatic API key"
 	regex = '''sk_live_[0-9a-z]{32}'''
 	tags = ["key", "Picatic"]
+```
+
+## PKCS8
+```
+[[rules]]
+description = "PKCS8"
+regex = '''-----BEGIN PRIVATE KEY-----'''
+tags = ["key", "PKCS8"]
 ```
 
 ## Port
@@ -316,6 +379,14 @@
     description = "PyPI upload token"
     regex = '''pypi-AgEIcHlwaS5vcmc[A-Za-z0-9-_]{50,1000}'''
     tags = ["key", "pypi"]
+```
+
+## RSA
+```
+[[rules]]
+description = "RSA"
+regex = '''-----BEGIN RSA PRIVATE KEY-----'''
+tags = ["key", "RSA"]
 ```
 
 ## SendGrid API Key
@@ -399,6 +470,14 @@ detected:
 	tags = ["key", "square"]
 ```
 
+## SSH
+```
+[[rules]]
+description = "SSH"
+regex = '''-----BEGIN OPENSSH PRIVATE KEY-----'''
+tags = ["key", "SSH"]
+```
+
 ## Stripe API key
 ```
 [[rules]]
@@ -456,7 +535,17 @@ detected:
 	tags = ["client", "Twitter"]
 ```
 
-## Generic Credential
+## Generic
+
+### Generic API key
+```
+[[rules]]
+description = "Generic API key"
+regex = '''(?i)(api_key|apikey)(.{0,20})?['|"][0-9a-zA-Z]{32,45}['|"]'''
+tags = ["key", "API", "generic"]
+```
+
+### Generic Credential
 ```
 [[rules]]
   description = "Generic Credential"
@@ -470,6 +559,14 @@ detected:
     	'''(?i)(.{0,20})?['"][0-9a-f]{32}-us[0-9]{1,2}['"]''',
       '''(A3T[A-Z0-9]|AKIA|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{16}'''
     ]
+```
+
+### Generic Secret
+```
+[[rules]]
+description = "Generic Secret"
+regex = '''(?i)secret(.{0,20})?['|"][0-9a-zA-Z]{32,45}['|"]'''
+tags = ["key", "Secret", "generic"]
 ```
 
 ## WP-Config

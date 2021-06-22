@@ -240,6 +240,71 @@ title = "gitleaks config"
     fileNameRegex = '''(?i)(id_rsa|passwd|id_rsa.pub|pgpass|pem|key|shadow)'''
 
 
+		[[rules]]
+		description = "PKCS8"
+		regex = '''-----BEGIN PRIVATE KEY-----'''
+		tags = ["key", "PKCS8"]
+
+		[[rules]]
+		description = "RSA"
+		regex = '''-----BEGIN RSA PRIVATE KEY-----'''
+		tags = ["key", "RSA"]
+
+		[[rules]]
+		description = "SSH"
+		regex = '''-----BEGIN OPENSSH PRIVATE KEY-----'''
+		tags = ["key", "SSH"]
+
+		[[rules]]
+		description = "PGP"
+		regex = '''-----BEGIN PGP PRIVATE KEY BLOCK-----'''
+		tags = ["key", "PGP"]
+
+		[[rules]]
+		description = "Facebook access token"
+		regex = '''EAACEdEose0cBA[0-9A-Za-z]+'''
+		tags = ["key", "Facebook"]
+
+		[[rules]]
+		description = "Generic API key"
+		regex = '''(?i)(api_key|apikey)(.{0,20})?['|"][0-9a-zA-Z]{32,45}['|"]'''
+		tags = ["key", "API", "generic"]
+
+		[[rules]]
+		description = "Generic Secret"
+		regex = '''(?i)secret(.{0,20})?['|"][0-9a-zA-Z]{32,45}['|"]'''
+		tags = ["key", "Secret", "generic"]
+
+		[[rules]]
+		description = "Google Cloud Platform API key"
+		regex = '''(?i)(google|gcp|youtube|drive|yt)(.{0,20})?['\"][AIza[0-9a-z\\-_]{35}]['\"]'''
+		tags = ["key", "Google", "GCP"]
+
+		[[rules]]
+		description = "Google OAuth"
+		regex = '''(?i)(google|gcp|auth)(.{0,20})?['"][0-9]+-[0-9a-z_]{32}\.apps\.googleusercontent\.com['"]'''
+		tags = ["key", "Google", "OAuth"]
+
+		[[rules]]
+		description = "Google OAuth access token"
+		regex = '''ya29\.[0-9A-Za-z\-_]+'''
+		tags = ["key", "Google", "OAuth"]
+
+		[[rules]]
+		description = "Mailgun API key"
+		regex = '''(?i)(mailgun|mg)(.{0,20})?['"][0-9a-z]{32}['"]'''
+		tags = ["key", "Mailgun"]
+
+		[[rules]]
+		description = "Password in URL"
+		regex = '''[a-zA-Z]{3,10}:\/\/[^\/\s:@]{3,20}:[^\/\s:@]{3,20}@.{1,100}\/?.?'''
+		tags = ["key", "URL", "generic"]
+
+		[[rules]]
+		description = "PayPal Braintree access token"
+		regex = '''access_token\$production\$[0-9a-z]{16}\$[0-9a-f]{32}'''
+		tags = ["key", "Paypal"]
+
 # Global allowlist
 [allowlist]
 	description = "Whitelisted files"
